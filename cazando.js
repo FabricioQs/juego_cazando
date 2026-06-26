@@ -83,8 +83,13 @@ function detectarColision() {
         gatoY + ALTO_GATO > comidaY && gatoY < comidaY + ALTO_COMIDA) {
         
         puntaje = puntaje + 1;
-
         document.getElementById("puntos").textContent = puntaje;
+
+        if (puntaje === 6) {
+            clearInterval(intervalo); // Detiene el reloj
+            alert("¡Felicidades! Atrapaste suficiente comida y ganaste el juego 🏆");
+            return;
+        }
 
         comidaX = Math.floor(Math.random() * (canvas.width - ANCHO_COMIDA));
         comidaY = Math.floor(Math.random() * (canvas.height - ALTO_COMIDA));
@@ -98,4 +103,9 @@ function detectarColision() {
 function restarTiempo() {
     tiempo = tiempo - 1;
     document.getElementById("tiempo").textContent = tiempo;
+
+    if (tiempo === 0) {
+        clearInterval(intervalo);
+        alert("GAME OVER: Se te acabó el tiempo");
+    }
 }
