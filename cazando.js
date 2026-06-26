@@ -10,6 +10,7 @@ let gatoX = 0;
 let gatoY = 0;   
 let comidaX = 0; 
 let comidaY = 0;
+let puntaje = 0;
 
 function iniciarJuego() {
    
@@ -77,6 +78,15 @@ function detectarColision() {
     if (gatoX + ANCHO_GATO > comidaX && gatoX < comidaX + ANCHO_COMIDA &&
         gatoY + ALTO_GATO > comidaY && gatoY < comidaY + ALTO_COMIDA) {
         
-        alert("Colisión detectada, El gato atrapó la comida."); // Alerta provisional
+        puntaje = puntaje + 1;
+
+        document.getElementById("puntos").textContent = puntaje;
+
+        comidaX = Math.floor(Math.random() * (canvas.width - ANCHO_COMIDA));
+        comidaY = Math.floor(Math.random() * (canvas.height - ALTO_COMIDA));
+
+        limpiarCanva();
+        graficarGato();
+        graficarComida();
     }
 }
