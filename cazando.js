@@ -109,3 +109,16 @@ function restarTiempo() {
         alert("GAME OVER: Se te acabó el tiempo");
     }
 }
+
+function reiniciarJuego() {
+    
+    clearInterval(intervalo);
+
+    puntaje = 0;
+    tiempo = 10;
+
+    document.getElementById("puntos").textContent = puntaje;
+    document.getElementById("tiempo").textContent = tiempo;
+
+    iniciarJuego();
+}
