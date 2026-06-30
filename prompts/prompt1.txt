@@ -1,0 +1,8 @@
+Eres un experto en diseño de paginas webs y programacion.
+
+revisa estos archivos y modificalos para el juego cazando, que se note que es un juego.
+
+dame por separado en html y css, no cambies los ids.
+--------------------------------------------------------------------
+Hazlo llamativo, que sea intuitivo y llamativo. se ve muy apagada haslo como si fuera un estilo gamer
+----------------------------------------------------------------------

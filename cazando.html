@@ -1,35 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Juego Cazando</title>
   <link rel="stylesheet" href="cazando.css" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body onload="iniciarJuego()">
 
-  <h1>Juego Cazando</h1>
-  <p>Autor: Kevin Quishpe</p>
-  <canvas id="areaJuego" width="500" height="500"></canvas>
+  <div class="retro-arcade-container">
+    <header class="game-header">
+      <h1 class="neon-title" data-text="CAZANDO">CAZANDO</h1>
+      <p class="player-tag">PLAYER 1: Kevin Quishpe</p>
+    </header>
 
+    <div class="panel">
+      <div class="hud-box score-box">
+        <span class="hud-label">SCORE</span>
+        <span id="puntos" class="hud-value">0</span>
+      </div>
+      <div class="hud-box time-box">
+        <span class="hud-label">TIME</span>
+        <span id="tiempo" class="hud-value">10</span>
+      </div>
+    </div>
 
-  <div class="controles">
-    <button onclick="moverArriba()">⬆</button>
-    <br>
-    <button onclick="moverIzquierda()">⬅</button>
-    <button onclick="moverAbajo()">⬇</button>
-    <button onclick="moverDerecha()">➡</button>
-    <br>
-    <button onclick="reiniciarJuego()">Reiniciar</button>
+    <div class="screen-wrapper">
+      <canvas id="areaJuego" width="500" height="500"></canvas>
+      <p id="mensaje"></p>
+    </div>
+
+    <div class="controles">
+      <div class="gamepad-cross">
+        <button class="btn-gamepad up" onclick="moverArriba()">▲</button>
+        <div class="horizontal-buttons">
+          <button class="btn-gamepad left" onclick="moverIzquierda()">◀</button>
+          <button class="btn-gamepad down" onclick="moverAbajo()">▼</button>
+          <button class="btn-gamepad right" onclick="moverDerecha()">▶</button>
+        </div>
+      </div>
+      
+      <button class="btn-action-reset" onclick="reiniciarJuego()">RESTART GAME</button>
+    </div>
   </div>
-
-  <div class="panel">
-    <span>Puntos: <span id="puntos">0</span></span>
-    <span>Tiempo: <span id="tiempo">10</span></span>
-  </div>
-
-  <p id="mensaje"></p>
 
   <script src="cazando.js"></script>
-
 </body>
 </html>
