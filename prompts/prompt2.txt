@@ -1,0 +1,3 @@
+Crea una imagen relacionada con los documentos que te comparto, que sea llamativa.
+-----------------------------------
+Agrega esta imagen de fondo a la pagina web y adaptalo para portatiles y dispositivos moviles, actuliza el css y html

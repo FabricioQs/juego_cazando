@@ -1,11 +1,13 @@
-/* --- Configuración del Entorno Gamer --- */
+/* --- Configuración del Entorno Gamer y Fondo de Pantalla --- */
 body {
   text-align: center;
-  font-family: 'Orbitron', sans-serif; /* Fuente futurista e intuitiva */
-  background: radial-gradient(circle at center, #1a0b2e 0%, #05010d 100%);
+  font-family: 'Orbitron', sans-serif;
+  /* Integración adaptativa de tu imagen de fondo */
+  background: url(img/fondo.png) no-repeat center center fixed;
+  background-size: cover; 
   color: #fff;
   margin: 0;
-  padding: 15px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,124 +16,120 @@ body {
   overflow-x: hidden;
 }
 
-/* Contenedor Estilo Gabinete de Arcade */
+/* Contenedor translúcido para apreciar el fondo.png de fondo */
 .retro-arcade-container {
-  background: rgba(13, 6, 31, 0.85);
-  padding: 30px;
+  background: rgba(10, 5, 28, 0.75); /* Opacidad para que se fusione con el fondo */
+  padding: 25px;
   border-radius: 24px;
-  box-shadow: 0 0 40px rgba(186, 12, 247, 0.25), 
-              inset 0 0 20px rgba(0, 242, 254, 0.15);
-  border: 2px solid #ba0cf7;
-  max-width: 550px;
+  box-shadow: 0 0 35px rgba(0, 242, 254, 0.2), 
+              inset 0 0 20px rgba(186, 12, 247, 0.15);
+  border: 2px solid #00f2fe;
+  max-width: 540px;
   width: 100%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px); /* Efecto de cristal esmerilado moderno */
+  box-sizing: border-box;
 }
 
-/* --- Título con Efecto Neón Glitch --- */
+/* --- Encabezado --- */
 .game-header {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .neon-title {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 900;
   letter-spacing: 4px;
   margin: 0;
   color: #00f2fe;
-  text-shadow: 0 0 10px #00f2fe, 0 0 20px #00f2fe, 0 0 40px #ba0cf7;
+  text-shadow: 0 0 10px #00f2fe, 0 0 20px #ba0cf7;
   text-transform: uppercase;
 }
 
 .player-tag {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #ff007f;
-  margin: 5px 0 0 0;
+  margin: 4px 0 0 0;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
-  text-shadow: 0 0 8px rgba(255, 0, 127, 0.6);
 }
 
-/* --- HUD / Marcadores Eléctricos --- */
+/* --- HUD / Marcadores --- */
 .panel {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
-  gap: 20px;
+  margin-bottom: 20px;
+  gap: 15px;
 }
 
 .hud-box {
-  background: #0d061f;
-  padding: 12px;
+  background: rgba(13, 6, 31, 0.9);
+  padding: 10px;
   border-radius: 12px;
   flex: 1;
-  position: relative;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-/* Borde Neón Diferenciado para Score y Time */
-.score-box { border: 2px solid #00f2fe; box-shadow: 0 0 15px rgba(0, 242, 254, 0.2); }
-.time-box { border: 2px solid #ff007f; box-shadow: 0 0 15px rgba(255, 0, 127, 0.2); }
+.score-box { border: 2px solid #00f2fe; box-shadow: 0 0 10px rgba(0, 242, 254, 0.2); }
+.time-box { border: 2px solid #ff007f; box-shadow: 0 0 10px rgba(255, 0, 127, 0.2); }
 
 .hud-label {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 2px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 .score-box .hud-label { color: #00f2fe; }
 .time-box .hud-label { color: #ff007f; }
 
 .hud-value {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 900;
   display: block;
-  font-family: 'Orbitron', monospace;
-  text-shadow: 0 0 5px #fff;
 }
 
-/* --- Pantalla de Juego Inteligente --- */
+/* --- Adaptación de Pantalla del Canvas --- */
 .screen-wrapper {
   position: relative;
-  margin: 0 auto 25px auto;
+  margin: 0 auto 20px auto;
   display: inline-block;
   background: #000;
   border-radius: 16px;
-  padding: 6px;
-  box-shadow: 0 0 25px rgba(186, 12, 247, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border: 2px solid #ba0cf7;
+  box-shadow: 0 0 20px rgba(186, 12, 247, 0.4);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 canvas {
-  background: #120924; /* Fondo oscuro interno para el juego */
+  background: rgba(18, 9, 36, 0.9);
   border-radius: 10px;
   display: block;
-  max-width: 100%;
-  height: auto;
+  max-width: 100%; /* Obliga al canvas a encogerse si la pantalla es pequeña */
+  height: auto;    /* Mantiene la proporción 1:1 original */
 }
 
-/* Cartel de Game Over de Impacto */
+/* Cartel de Fin de Juego */
 #mensaje {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 900;
   color: #fff;
-  text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055;
+  text-shadow: 0 0 10px #ff0055;
   background: rgba(10, 3, 22, 0.95);
-  padding: 20px 30px;
+  padding: 15px 25px;
   border-radius: 12px;
   border: 3px solid #ff0055;
-  box-shadow: 0 0 30px #ff0055;
+  box-shadow: 0 0 25px #ff0055;
   margin: 0;
   width: 80%;
   box-sizing: border-box;
   pointer-events: none;
   display: none;
-  letter-spacing: 2px;
 }
 
 #mensaje:not(:empty) {
@@ -139,12 +137,12 @@ canvas {
   animation: pulseGlow 1.5s infinite ease-in-out;
 }
 
-/* --- D-PAD / Mandos de Juego Renovados --- */
+/* --- Controles Remotos Estilo Gamepad --- */
 .controles {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .gamepad-cross {
@@ -155,67 +153,101 @@ canvas {
 
 .horizontal-buttons {
   display: flex;
-  gap: 12px;
-  margin-top: 10px;
+  gap: 10px;
+  margin-top: 8px;
 }
 
-/* Botones Direccionales Reactivos */
 .btn-gamepad {
   background: linear-gradient(145deg, #241445, #130729);
   color: #00f2fe;
   border: 2px solid #00f2fe;
-  font-size: 1.4rem;
-  width: 65px;
-  height: 55px;
+  font-size: 1.2rem;
+  width: 60px;
+  height: 50px;
   border-radius: 12px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 5px 0 #00878f, 0 0 10px rgba(0, 242, 254, 0.3);
+  box-shadow: 0 4px 0 #00878f;
   transition: all 0.05s ease-in-out;
 }
 
 .btn-gamepad:hover {
   background: #00f2fe;
   color: #130729;
-  box-shadow: 0 5px 0 #00b6bf, 0 0 20px rgba(0, 242, 254, 0.6);
 }
 
 .btn-gamepad:active {
   transform: translateY(4px);
-  box-shadow: 0 1px 0 #00878f, 0 0 10px rgba(0, 242, 254, 0.4);
+  box-shadow: 0 0px 0 #00878f;
 }
 
-/* Botón de Reiniciar Estilo 'Inserte Moneda / Start' */
 .btn-action-reset {
   background: linear-gradient(135deg, #ff007f 0%, #b30059 100%);
   color: #fff;
   border: 2px solid #ff007f;
   border-radius: 50px;
-  padding: 14px 40px;
-  font-size: 1.1rem;
+  padding: 12px 35px;
+  font-size: 1rem;
   font-weight: 900;
   letter-spacing: 2px;
   cursor: pointer;
-  box-shadow: 0 6px 0 #800040, 0 0 15px rgba(255, 0, 127, 0.4);
+  box-shadow: 0 5px 0 #800040;
   transition: all 0.05s ease;
   width: 100%;
-  max-width: 260px;
-}
-
-.btn-action-reset:hover {
-  background: linear-gradient(135deg, #ff3399 0%, #ff007f 100%);
-  box-shadow: 0 6px 0 #800040, 0 0 25px rgba(255, 0, 127, 0.8);
+  max-width: 240px;
 }
 
 .btn-action-reset:active {
   transform: translateY(4px);
-  box-shadow: 0 2px 0 #800040, 0 0 15px rgba(255, 0, 127, 0.5);
+  box-shadow: 0 0px 0 #800040;
 }
 
-/* --- Animaciones --- */
+/* --- OPTIMIZACIÓN MÓVIL Y PORTÁTILES (MEDIA QUERIES) --- */
+
+/* Pantallas pequeñas y Celulares (Vertical) */
+@media (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
+  
+  .retro-arcade-container {
+    padding: 15px;
+    border-radius: 16px;
+  }
+
+  .neon-title {
+    font-size: 1.9rem;
+    letter-spacing: 2px;
+  }
+
+  .hud-value {
+    font-size: 1.3rem;
+  }
+
+  .btn-gamepad {
+    width: 50px;
+    height: 45px;
+    font-size: 1rem;
+  }
+  
+  .btn-action-reset {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ajustes adicionales para evitar scroll vertical excesivo en portátiles pequeñas */
+@media (max-height: 750px) {
+  .game-header { margin-bottom: 10px; }
+  .panel { margin-bottom: 10px; }
+  .screen-wrapper { margin-bottom: 15px; }
+  .neon-title { font-size: 2rem; }
+}
+
+/* Animación */
 @keyframes pulseGlow {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 20px #ff0055; }
-  50% { transform: translate(-50%, -50%) scale(1.03); box-shadow: 0 0 35px #ff0055, 0 0 10px #ff007f; }
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.03); }
 }
